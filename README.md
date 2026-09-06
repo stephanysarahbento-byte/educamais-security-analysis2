@@ -165,9 +165,11 @@ Monitoramento
 Justificativa
 A OWASP complementa os demais referenciais com uma visão técnica sobre os riscos específicos da aplicação web.
 
-🔗 Integração dos frameworks
+## 🔗 Integração dos frameworks
+
 Os quatro referenciais devem ser utilizados de maneira complementar.
 
+```text
                  EDUCAMais
                      │
                      ▼
@@ -227,6 +229,8 @@ Conscientização sobre phishing;
 Boas práticas de senhas;
 Uso correto de MFA;
 Proteção de dados;
+Comunicação de incidentes.
+
 ## 📊 Plano de ação
 
 | Prazo | Ação | Referencial |
@@ -243,18 +247,23 @@ Proteção de dados;
 | Contínuo | Treinar colaboradores | ISO / NIST / CIS |
 | Contínuo | Revisar e melhorar os controles | ISO 27001 |
 
-🎯 Resultado esperado
+## 🎯 Resultado esperado
+
 Com a implementação das medidas propostas, espera-se:
 
-Redução do risco de comprometimento de contas;
-Redução de privilégios excessivos;
-Maior proteção da aplicação web;
-Maior capacidade de detectar ataques;
-Resposta mais rápida a incidentes;
-Maior disponibilidade da plataforma;
-Melhoria da cultura de segurança;
-Estrutura formal de gestão de riscos.
-📝 Conclusão
+- Redução do risco de comprometimento de contas;
+- Redução de privilégios excessivos;
+- Maior proteção da aplicação web;
+- Maior capacidade de detectar ataques;
+- Resposta mais rápida a incidentes;
+- Maior disponibilidade da plataforma;
+- Melhoria da cultura de segurança;
+- Estrutura formal de gestão de riscos.
+
+---
+
+## 📝 Conclusão
+
 Os problemas encontrados na EducaMais não representam apenas falhas técnicas. Eles demonstram uma baixa maturidade geral em segurança da informação.
 
 A integração entre ISO 27001, NIST CSF, CIS Controls e OWASP permite abordar o problema de forma abrangente.
@@ -263,12 +272,18 @@ A ISO 27001 fornece a estrutura de gestão e governança; o NIST CSF organiza o 
 
 Dessa forma, a EducaMais pode evoluir de uma postura reativa para uma abordagem estruturada, baseada em riscos e orientada à melhoria contínua.
 
-📚 Referenciais
-ISO/IEC 27001:2022
-NIST Cybersecurity Framework 2.0
-CIS Controls
-OWASP
-Projeto acadêmico — Segurança da Informação
+---
 
-Empresa: EducaMais
-Status: Análise inicial
+## 📚 Referenciais
+
+- ISO/IEC 27001:2022
+- NIST Cybersecurity Framework 2.0
+- CIS Controls
+- OWASP
+
+---
+
+**Projeto acadêmico — Segurança da Informação**
+
+**Empresa:** EducaMais  
+**Status:** Análise inicial
