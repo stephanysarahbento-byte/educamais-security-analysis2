@@ -90,7 +90,8 @@ Detect
 Respond
    ↓
 Recover
-### Aplicação na EducaMais
+
+Aplicação na EducaMais
 Govern: estabelecer políticas, responsabilidades e critérios de risco.
 
 Identify: identificar ativos, sistemas, dados e riscos.
@@ -144,6 +145,7 @@ Um aluno, por exemplo, não deve conseguir acessar informações de outro aluno 
 
 💻 Desenvolvimento seguro
 A segurança deve fazer parte de todo o ciclo de desenvolvimento:
+
 Requisitos
     ↓
 Desenvolvimento
@@ -161,6 +163,7 @@ A OWASP complementa os demais referenciais com uma visão técnica sobre os risc
 
 🔗 Integração dos frameworks
 Os quatro referenciais devem ser utilizados de maneira complementar.
+
                  EDUCAMais
                      │
                      ▼
@@ -221,22 +224,19 @@ Boas práticas de senhas;
 Uso correto de MFA;
 Proteção de dados;
 Comunicação de incidentes.
-
-## 📊 Plano de ação
-
-| Prazo | Ação | Referencial |
-|---|---|---|
-| Imediato | Corrigir login e recuperação de senha | OWASP |
-| Imediato | Revisar privilégios administrativos | CIS / OWASP |
-| Imediato | Proteger contas administrativas com MFA | NIST / CIS |
-| Imediato | Investigar acessos não autorizados | NIST |
-| Curto prazo | Implantar logs e monitoramento | NIST / CIS |
-| Curto prazo | Criar resposta a incidentes | NIST / ISO 27001 |
-| Curto prazo | Inventariar ativos | CIS / ISO 27001 |
-| Médio prazo | Estruturar gestão de riscos | ISO 27001 |
-| Médio prazo | Implementar desenvolvimento seguro | OWASP |
-| Contínuo | Treinar colaboradores | ISO / NIST / CIS |
-| Contínuo | Revisar e melhorar os controles | ISO 27001 |
+📊 Plano de ação
+Prazo	Ação	Referencial
+Imediato	Corrigir login e recuperação de senha	OWASP
+Imediato	Revisar privilégios administrativos	CIS / OWASP
+Imediato	Proteger contas administrativas com MFA	NIST / CIS
+Imediato	Investigar acessos não autorizados	NIST
+Curto prazo	Implantar logs e monitoramento	NIST / CIS
+Curto prazo	Criar resposta a incidentes	NIST / ISO 27001
+Curto prazo	Inventariar ativos	CIS / ISO 27001
+Médio prazo	Estruturar gestão de riscos	ISO 27001
+Médio prazo	Implementar desenvolvimento seguro	OWASP
+Contínuo	Treinar colaboradores	ISO / NIST / CIS
+Contínuo	Revisar e melhorar os controles	ISO 27001
 
 🎯 Resultado esperado
 Com a implementação das medidas propostas, espera-se:
