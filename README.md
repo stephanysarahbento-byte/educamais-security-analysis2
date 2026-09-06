@@ -4,39 +4,41 @@
 
 A **EducaMais** é uma empresa fictícia do setor de educação que oferece cursos livres por meio de uma plataforma web.
 
-A plataforma permite que os alunos realizem cadastro, efetuem pagamentos, acessem materiais didáticos e acompanhem seu progresso em ambiente online.
+A plataforma permite o cadastro de usuários, realização de pagamentos, acesso a materiais didáticos e acompanhamento do progresso dos alunos.
 
-Com o crescimento acelerado da empresa, foram identificados problemas relacionados à segurança da informação.
+Com o crescimento da organização, foram identificados problemas relacionados à autenticação, controle de acesso, proteção de dados, monitoramento e gestão de segurança.
 
-Este projeto apresenta uma análise inicial desses problemas e propõe medidas de segurança com base em frameworks e boas práticas reconhecidas.
-
----
-
-## 🚨 Problemas identificados
-
-Foram identificados os seguintes problemas:
-
-- 🔴 Acessos não autorizados em contas de usuários;
-- 🔴 Falhas no formulário de login;
-- 🔴 Falhas no módulo de redefinição de senha;
-- 🟠 Instabilidade após aumento de requisições;
-- 🔴 Privilégios administrativos acima do necessário;
-- 🟠 Ausência de processo formal de gestão de riscos;
-- 🟠 Ausência de processo definido de resposta a incidentes;
-- 🟡 Baixa conscientização dos colaboradores.
+Este projeto apresenta uma **análise de Segurança da Informação baseada em riscos**, utilizando boas práticas e referenciais reconhecidos para identificar riscos, priorizar ações e propor controles de segurança.
 
 ---
 
 ## 🎯 Objetivos
 
-O projeto tem como objetivos:
+O projeto tem como principais objetivos:
 
-- Identificar os principais riscos de segurança;
-- Priorizar controles e ações;
-- Analisar os riscos da plataforma web;
-- Propor medidas de prevenção e proteção;
-- Estruturar uma abordagem de resposta a incidentes;
-- Integrar diferentes frameworks de segurança.
+* Identificar ativos e riscos relevantes para a plataforma;
+* Avaliar probabilidade e impacto dos riscos;
+* Priorizar riscos de acordo com sua criticidade;
+* Propor controles técnicos, administrativos e operacionais;
+* Estruturar um plano de tratamento de riscos;
+* Relacionar os controles aos principais frameworks de segurança;
+* Fortalecer a segurança da aplicação web e dos dados dos usuários.
+
+---
+
+## 🚨 Principais riscos identificados
+
+A análise resultou na definição de cinco riscos prioritários:
+
+| ID  | Risco                                       | Probabilidade | Impacto | Prioridade |
+| --- | ------------------------------------------- | ------------- | ------- | ---------- |
+| R01 | Acesso não autorizado                       | Alta          | Alto    | Crítica    |
+| R02 | Exposição de dados sensíveis                | Média         | Alto    | Alta       |
+| R03 | Falhas no controle de acesso                | Alta          | Alto    | Crítica    |
+| R04 | Ausência de monitoramento e logs            | Média         | Alto    | Alta       |
+| R05 | Exploração de vulnerabilidades na aplicação | Alta          | Alto    | Crítica    |
+
+Os riscos relacionados à autenticação, autorização e vulnerabilidades da aplicação receberam maior prioridade devido ao potencial de comprometimento de contas, dados e funcionalidades da plataforma.
 
 ---
 
@@ -44,205 +46,141 @@ O projeto tem como objetivos:
 
 A análise utiliza quatro referências principais:
 
-| Framework | Principal contribuição |
-|---|---|
-| ISO/IEC 27001:2022 | Gestão e governança da segurança |
-| NIST CSF 2.0 | Gestão do ciclo de segurança cibernética |
-| CIS Controls | Controles e ações práticas de segurança |
-| OWASP | Segurança de aplicações web |
+| Framework                        | Aplicação no projeto                                                                                |
+| -------------------------------- | --------------------------------------------------------------------------------------------------- |
+| ISO/IEC 27001:2022               | Gestão de riscos, governança e controles de Segurança da Informação                                 |
+| NIST Cybersecurity Framework 2.0 | Organização das atividades de governança, identificação, proteção, detecção, resposta e recuperação |
+| CIS Controls                     | Implementação de controles técnicos e operacionais priorizados                                      |
+| OWASP                            | Identificação e mitigação de riscos relacionados à aplicação web                                    |
+
+Os frameworks são utilizados de forma complementar.
+
+**ISO/IEC 27001 → Governança e Gestão de Riscos**
+
+**NIST CSF → Govern → Identify → Protect → Detect → Respond → Recover**
+
+**CIS Controls → Controles técnicos e operacionais**
+
+**OWASP → Segurança da aplicação web**
 
 ---
 
-## 1. ISO/IEC 27001:2022
+## 🔐 Principais controles propostos
 
-A ISO/IEC 27001:2022 fornece uma estrutura para estabelecer e manter um Sistema de Gestão de Segurança da Informação (SGSI) baseado em riscos.
+A partir dos riscos identificados, foram recomendados controles como:
 
-### Aplicação na EducaMais
-
-A empresa deve:
-
-- Identificar e avaliar riscos;
-- Definir políticas de segurança;
-- Estabelecer responsabilidades;
-- Implementar controles;
-- Monitorar os resultados;
-- Promover melhoria contínua.
-
-### Justificativa
-
-A EducaMais não possui um processo formal de gestão de riscos. Portanto, a ISO 27001 é importante para transformar a segurança em um processo contínuo de gestão, e não apenas em ações pontuais após a ocorrência de problemas.
-
----
-
-## 2. NIST Cybersecurity Framework 2.0
-
-O NIST CSF 2.0 organiza a segurança cibernética em seis funções:
-
-**Govern → Identify → Protect → Detect → Respond → Recover**
-
-### Aplicação na EducaMais
-
-**Govern:** estabelecer políticas, responsabilidades e critérios de risco.
-
-**Identify:** identificar ativos, sistemas, dados e riscos.
-
-**Protect:** implementar MFA, controle de acesso, proteção de dados e autenticação adequada.
-
-**Detect:** monitorar logs e identificar atividades suspeitas.
-
-**Respond:** estabelecer procedimentos para tratar incidentes.
-
-**Recover:** implementar backups e procedimentos de recuperação.
-
-### Justificativa
-
-O NIST CSF permite organizar a segurança como um ciclo contínuo, desde a identificação dos riscos até a recuperação após um incidente.
+* Autenticação multifator (MFA);
+* Políticas de autenticação segura;
+* Controle de acesso baseado em funções (RBAC);
+* Princípio do menor privilégio;
+* Revisão periódica de permissões;
+* Criptografia de dados sensíveis;
+* Proteção de dados em trânsito;
+* Registro e centralização de logs;
+* Monitoramento e alertas de segurança;
+* Gestão contínua de vulnerabilidades;
+* Atualização de bibliotecas e componentes;
+* Testes de segurança da aplicação;
+* Desenvolvimento seguro;
+* Backups periódicos;
+* Procedimentos de resposta a incidentes.
 
 ---
 
-## 3. CIS Controls
+## 🚦 Estratégia de implementação
 
-Os CIS Controls apresentam práticas de segurança que podem ser utilizadas de forma prática e priorizada.
+Os controles foram organizados em três fases.
 
-### Aplicação na EducaMais
+### Fase 1 — Controles prioritários
 
-Entre as principais ações estão:
+* Implementação de MFA;
+* Controle de acesso baseado em funções;
+* Princípio do menor privilégio;
+* Correção de vulnerabilidades críticas;
+* Implementação de logs de segurança.
 
-- Inventário de ativos;
-- Gerenciamento de contas;
-- Controle de acesso;
-- Gestão de vulnerabilidades;
-- Configuração segura;
-- Gerenciamento de logs;
-- Proteção de dados;
-- Monitoramento;
-- Conscientização dos colaboradores;
-- Resposta a incidentes.
+### Fase 2 — Fortalecimento da segurança
 
-### Justificativa
+* Criptografia de dados sensíveis;
+* Monitoramento contínuo;
+* Alertas de segurança;
+* Revisão periódica de permissões;
+* Gestão de vulnerabilidades.
 
-Os CIS Controls complementam os demais frameworks ao transformar objetivos de segurança em ações práticas.
+### Fase 3 — Melhoria contínua
 
-No caso da EducaMais, são especialmente importantes para tratar os privilégios excessivos, as vulnerabilidades e o monitoramento do ambiente.
-
----
-
-## 4. OWASP
-
-A OWASP é especialmente relevante porque a EducaMais possui uma plataforma web.
-
-### Principais pontos de atenção
-
-#### 🔑 Autenticação
-
-O mecanismo de login deve ser protegido contra tentativas automatizadas, abuso de credenciais e outros ataques.
-
-#### 🔄 Redefinição de senha
-
-O mecanismo de recuperação deve utilizar tokens seguros, imprevisíveis e com validade limitada.
-
-#### 👤 Controle de acesso
-
-Cada usuário deve acessar somente os recursos para os quais possui autorização.
-
-Um aluno, por exemplo, não deve conseguir acessar informações de outro aluno ou funções administrativas.
-
-#### 💻 Desenvolvimento seguro
-
-A segurança deve fazer parte de todo o ciclo de desenvolvimento:
-
-**Requisitos → Desenvolvimento → Code Review → Testes de Segurança → Deploy → Monitoramento**
-
-### Justificativa
-
-A OWASP complementa os demais referenciais com uma visão técnica sobre os riscos específicos da aplicação web.
+* Avaliações periódicas de riscos;
+* Testes de segurança;
+* Revisão dos controles;
+* Atualização de sistemas e componentes;
+* Simulação e tratamento de incidentes.
 
 ---
 
-## 🔗 Integração dos frameworks
+## 📊 Indicadores de segurança
 
-Os quatro referenciais devem ser utilizados de maneira complementar.
+Para acompanhar a efetividade dos controles, foram definidos indicadores como:
 
-| Referencial | Contribuição |
-|---|---|
-| ISO 27001 | Governança e gestão da segurança |
-| NIST CSF | Organização do ciclo de segurança |
-| CIS Controls | Ações práticas e priorizadas |
-| OWASP | Segurança da aplicação web |
-
-A **ISO 27001** fornece a visão de gestão e governança.
-
-O **NIST CSF** organiza o ciclo de segurança.
-
-Os **CIS Controls** apresentam ações práticas e priorizadas.
-
-A **OWASP** aprofunda a segurança da aplicação web.
+* Percentual de contas protegidas por MFA;
+* Número de tentativas de acesso bloqueadas;
+* Número de vulnerabilidades críticas abertas;
+* Tempo médio para correção de vulnerabilidades;
+* Número de incidentes detectados;
+* Tempo médio de resposta a incidentes;
+* Percentual de acessos e privilégios revisados.
 
 ---
 
-## 🚦 Priorização das ações
+## 📂 Estrutura do projeto
 
-### 🔴 Prioridade 1 — Riscos críticos
-
-- Corrigir vulnerabilidades no login;
-- Corrigir a redefinição de senha;
-- Revisar privilégios administrativos;
-- Implementar MFA para contas administrativas;
-- Investigar acessos não autorizados;
-- Analisar logs;
-- Corrigir vulnerabilidades críticas da aplicação.
-
-### 🟠 Prioridade 2 — Detecção e resposta
-
-- Criar processo de resposta a incidentes;
-- Definir responsáveis;
-- Implementar monitoramento;
-- Criar procedimentos de contenção;
-- Estabelecer canais de comunicação.
-
-### 🟡 Prioridade 3 — Governança
-
-- Criar política de segurança;
-- Realizar inventário de ativos;
-- Criar registro de riscos;
-- Definir responsáveis pelos riscos;
-- Estabelecer indicadores.
-
-### 🟢 Prioridade 4 — Desenvolvimento seguro
-
-- Code review;
-- Testes de segurança;
-- Análise de dependências;
-- Gestão de vulnerabilidades;
-- Proteção de segredos;
-- Testes de autenticação e autorização.
-
-### 🔵 Prioridade 5 — Pessoas
-
-- Treinamento de segurança;
-- Conscientização sobre phishing;
-- Boas práticas de senhas;
-- Uso correto de MFA;
-- Proteção de dados;
-- Comunicação de incidentes.
+```text
+educamais-security-analysis2/
+│
+├── docs/
+│   ├── analise-riscos.md
+│   ├── gestao-de-riscos.md
+│   ├── plano-de-tratamento.md
+│   ├── iso-27001.md
+│   ├── nist-csf.md
+│   ├── cis-controls.md
+│   └── owasp.md
+│
+├── diagrams/
+│   └── documentação visual da arquitetura de segurança
+│
+└── README.md
+```
 
 ---
 
-## 📊 Plano de ação
+## 📚 Documentação
 
-| Prazo | Ação | Referencial |
-|---|---|---|
-| Imediato | Corrigir login e recuperação de senha | OWASP |
-| Imediato | Revisar privilégios administrativos | CIS / OWASP |
-| Imediato | Proteger contas administrativas com MFA | NIST / CIS |
-| Imediato | Investigar acessos não autorizados | NIST |
-| Curto prazo | Implantar logs e monitoramento | NIST / CIS |
-| Curto prazo | Criar resposta a incidentes | NIST / ISO 27001 |
-| Curto prazo | Inventariar ativos | CIS / ISO 27001 |
-| Médio prazo | Estruturar gestão de riscos | ISO 27001 |
-| Médio prazo | Implementar desenvolvimento seguro | OWASP |
-| Contínuo | Treinar colaboradores | ISO / NIST / CIS |
-| Contínuo | Revisar e melhorar os controles | ISO 27001 |
+### Gestão de riscos
+
+* [Análise de Riscos](docs/analise-riscos.md)
+* [Gestão de Riscos](docs/gestao-de-riscos.md)
+* [Plano de Tratamento de Riscos](docs/plano-de-tratamento.md)
+
+### Frameworks
+
+* [ISO/IEC 27001](docs/iso-27001.md)
+* [NIST Cybersecurity Framework](docs/nist-csf.md)
+* [CIS Controls](docs/cis-controls.md)
+* [OWASP](docs/owasp.md)
+
+### Arquitetura
+
+Os diagramas do projeto estão disponíveis no diretório [`diagrams/`](diagrams/).
+
+---
+
+## 🔄 Fluxo da análise
+
+O projeto segue uma abordagem estruturada:
+
+**Contexto → Identificação de Ativos → Identificação de Riscos → Avaliação → Priorização → Tratamento → Monitoramento → Melhoria Contínua**
+
+Essa abordagem permite relacionar os problemas identificados aos riscos, controles e ações de tratamento.
 
 ---
 
@@ -250,40 +188,37 @@ A **OWASP** aprofunda a segurança da aplicação web.
 
 Com a implementação das medidas propostas, espera-se:
 
-- Redução do risco de comprometimento de contas;
-- Redução de privilégios excessivos;
-- Maior proteção da aplicação web;
-- Maior capacidade de detectar ataques;
-- Resposta mais rápida a incidentes;
-- Maior disponibilidade da plataforma;
-- Melhoria da cultura de segurança;
-- Estrutura formal de gestão de riscos.
+* Redução da probabilidade de comprometimento de contas;
+* Maior proteção dos dados dos usuários;
+* Redução de privilégios excessivos;
+* Maior segurança da aplicação web;
+* Maior capacidade de detecção de atividades suspeitas;
+* Melhoria da resposta a incidentes;
+* Fortalecimento da gestão de vulnerabilidades;
+* Evolução da maturidade de Segurança da Informação.
 
 ---
 
 ## 📝 Conclusão
 
-Os problemas encontrados na EducaMais não representam apenas falhas técnicas. Eles demonstram uma baixa maturidade geral em segurança da informação.
+A análise da EducaMais demonstra que a Segurança da Informação deve envolver não apenas controles técnicos, mas também gestão de riscos, governança, monitoramento e melhoria contínua.
 
-A integração entre ISO 27001, NIST CSF, CIS Controls e OWASP permite abordar o problema de forma abrangente.
+A utilização integrada da **ISO/IEC 27001:2022, NIST CSF 2.0, CIS Controls e OWASP** permite abordar os riscos sob diferentes perspectivas, combinando governança, gestão, controles técnicos e segurança de aplicações.
 
-A ISO 27001 fornece a estrutura de gestão e governança; o NIST CSF organiza o ciclo de segurança; os CIS Controls apresentam ações práticas; e a OWASP fornece uma visão específica sobre a segurança da aplicação web.
-
-Dessa forma, a EducaMais pode evoluir de uma postura reativa para uma abordagem estruturada, baseada em riscos e orientada à melhoria contínua.
+O projeto demonstra a aplicação prática de conceitos de **análise de riscos, controle de acesso, proteção de dados, gestão de vulnerabilidades, monitoramento e resposta a incidentes** em um cenário corporativo fictício.
 
 ---
 
 ## 📚 Referenciais
 
-- ISO/IEC 27001:2022
-- NIST Cybersecurity Framework 2.0
-- CIS Controls
-- OWASP
+* ISO/IEC 27001:2022
+* NIST Cybersecurity Framework 2.0
+* CIS Controls
+* OWASP
 
 ---
 
 **Projeto acadêmico — Segurança da Informação**
 
-**Empresa:** EducaMais
-
-**Status:** Análise inicial
+**Empresa analisada:** EducaMais
+**Status:** Concluído
