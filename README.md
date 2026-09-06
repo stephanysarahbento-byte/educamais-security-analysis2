@@ -90,7 +90,7 @@ Detect
 Respond
    ↓
 Recover
-Aplicação na EducaMais
+### Aplicação na EducaMais
 Govern: estabelecer políticas, responsabilidades e critérios de risco.
 
 Identify: identificar ativos, sistemas, dados e riscos.
