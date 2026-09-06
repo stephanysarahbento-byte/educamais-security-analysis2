@@ -76,21 +76,9 @@ A EducaMais não possui um processo formal de gestão de riscos. Portanto, a ISO
 
 ## 2. NIST Cybersecurity Framework 2.0
 
-O NIST CSF organiza a segurança cibernética em seis funções:
+O NIST CSF 2.0 organiza a segurança cibernética em seis funções:
 
-```text
-Govern
-   ↓
-Identify
-   ↓
-Protect
-   ↓
-Detect
-   ↓
-Respond
-   ↓
-Recover
-```
+**Govern → Identify → Protect → Detect → Respond → Recover**
 
 ### Aplicação na EducaMais
 
@@ -110,126 +98,135 @@ Recover
 
 O NIST CSF permite organizar a segurança como um ciclo contínuo, desde a identificação dos riscos até a recuperação após um incidente.
 
+---
 
-3. CIS Controls
+## 3. CIS Controls
+
 Os CIS Controls apresentam práticas de segurança que podem ser utilizadas de forma prática e priorizada.
 
-Aplicação na EducaMais
+### Aplicação na EducaMais
+
 Entre as principais ações estão:
 
-Inventário de ativos;
-Gerenciamento de contas;
-Controle de acesso;
-Gestão de vulnerabilidades;
-Configuração segura;
-Gerenciamento de logs;
-Proteção de dados;
-Monitoramento;
-Conscientização dos colaboradores;
-Resposta a incidentes.
-Justificativa
+- Inventário de ativos;
+- Gerenciamento de contas;
+- Controle de acesso;
+- Gestão de vulnerabilidades;
+- Configuração segura;
+- Gerenciamento de logs;
+- Proteção de dados;
+- Monitoramento;
+- Conscientização dos colaboradores;
+- Resposta a incidentes.
+
+### Justificativa
+
 Os CIS Controls complementam os demais frameworks ao transformar objetivos de segurança em ações práticas.
 
 No caso da EducaMais, são especialmente importantes para tratar os privilégios excessivos, as vulnerabilidades e o monitoramento do ambiente.
 
-4. OWASP
+---
+
+## 4. OWASP
+
 A OWASP é especialmente relevante porque a EducaMais possui uma plataforma web.
 
-Principais pontos de atenção
-🔑 Autenticação
+### Principais pontos de atenção
+
+#### 🔑 Autenticação
+
 O mecanismo de login deve ser protegido contra tentativas automatizadas, abuso de credenciais e outros ataques.
 
-🔄 Redefinição de senha
+#### 🔄 Redefinição de senha
+
 O mecanismo de recuperação deve utilizar tokens seguros, imprevisíveis e com validade limitada.
 
-👤 Controle de acesso
+#### 👤 Controle de acesso
+
 Cada usuário deve acessar somente os recursos para os quais possui autorização.
 
 Um aluno, por exemplo, não deve conseguir acessar informações de outro aluno ou funções administrativas.
 
-💻 Desenvolvimento seguro
+#### 💻 Desenvolvimento seguro
+
 A segurança deve fazer parte de todo o ciclo de desenvolvimento:
 
-Requisitos
-    ↓
-Desenvolvimento
-    ↓
-Code Review
-    ↓
-Testes de Segurança
-    ↓
-Deploy
-    ↓
-Monitoramento
+**Requisitos → Desenvolvimento → Code Review → Testes de Segurança → Deploy → Monitoramento**
 
-Justificativa
+### Justificativa
+
 A OWASP complementa os demais referenciais com uma visão técnica sobre os riscos específicos da aplicação web.
+
+---
 
 ## 🔗 Integração dos frameworks
 
 Os quatro referenciais devem ser utilizados de maneira complementar.
 
-```text
-                 EDUCAMais
-                     │
-                     ▼
-              Gestão de Riscos
-                     │
-        ┌────────────┼────────────┐
-        ▼            ▼            ▼
-   ISO 27001      NIST CSF    CIS Controls
-   Governança      Ciclo      Ações práticas
-        │            │            │
-        └────────────┼────────────┘
-                     ▼
-                   OWASP
-                     │
-                     ▼
-          Segurança da aplicação
+| Referencial | Contribuição |
+|---|---|
+| ISO 27001 | Governança e gestão da segurança |
+| NIST CSF | Organização do ciclo de segurança |
+| CIS Controls | Ações práticas e priorizadas |
+| OWASP | Segurança da aplicação web |
 
-A ISO 27001 fornece a visão de gestão e governança.
+A **ISO 27001** fornece a visão de gestão e governança.
 
-O NIST CSF organiza o ciclo de segurança.
+O **NIST CSF** organiza o ciclo de segurança.
 
-Os CIS Controls apresentam ações práticas e priorizadas.
+Os **CIS Controls** apresentam ações práticas e priorizadas.
 
-A OWASP aprofunda a segurança da aplicação web.
+A **OWASP** aprofunda a segurança da aplicação web.
 
-🚦 Priorização das ações
-🔴 Prioridade 1 — Riscos críticos
-Corrigir vulnerabilidades no login;
-Corrigir a redefinição de senha;
-Revisar privilégios administrativos;
-Implementar MFA para contas administrativas;
-Investigar acessos não autorizados;
-Analisar logs;
-Corrigir vulnerabilidades críticas da aplicação.
-🟠 Prioridade 2 — Detecção e resposta
-Criar processo de resposta a incidentes;
-Definir responsáveis;
-Implementar monitoramento;
-Criar procedimentos de contenção;
-Estabelecer canais de comunicação.
-🟡 Prioridade 3 — Governança
-Criar política de segurança;
-Realizar inventário de ativos;
-Criar registro de riscos;
-Definir responsáveis pelos riscos;
-Estabelecer indicadores.
-🟢 Prioridade 4 — Desenvolvimento seguro
-Code review;
-Testes de segurança;
-Análise de dependências;
-Gestão de vulnerabilidades;
-Proteção de segredos;
-Testes de autenticação e autorização.
-🔵 Prioridade 5 — Pessoas
-Treinamento de segurança;
-Conscientização sobre phishing;
-Boas práticas de senhas;
-Uso correto de MFA;
-Proteção de dados;
-Comunicação de incidentes.
+---
+
+## 🚦 Priorização das ações
+
+### 🔴 Prioridade 1 — Riscos críticos
+
+- Corrigir vulnerabilidades no login;
+- Corrigir a redefinição de senha;
+- Revisar privilégios administrativos;
+- Implementar MFA para contas administrativas;
+- Investigar acessos não autorizados;
+- Analisar logs;
+- Corrigir vulnerabilidades críticas da aplicação.
+
+### 🟠 Prioridade 2 — Detecção e resposta
+
+- Criar processo de resposta a incidentes;
+- Definir responsáveis;
+- Implementar monitoramento;
+- Criar procedimentos de contenção;
+- Estabelecer canais de comunicação.
+
+### 🟡 Prioridade 3 — Governança
+
+- Criar política de segurança;
+- Realizar inventário de ativos;
+- Criar registro de riscos;
+- Definir responsáveis pelos riscos;
+- Estabelecer indicadores.
+
+### 🟢 Prioridade 4 — Desenvolvimento seguro
+
+- Code review;
+- Testes de segurança;
+- Análise de dependências;
+- Gestão de vulnerabilidades;
+- Proteção de segredos;
+- Testes de autenticação e autorização.
+
+### 🔵 Prioridade 5 — Pessoas
+
+- Treinamento de segurança;
+- Conscientização sobre phishing;
+- Boas práticas de senhas;
+- Uso correto de MFA;
+- Proteção de dados;
+- Comunicação de incidentes.
+
+---
 
 ## 📊 Plano de ação
 
@@ -246,6 +243,8 @@ Comunicação de incidentes.
 | Médio prazo | Implementar desenvolvimento seguro | OWASP |
 | Contínuo | Treinar colaboradores | ISO / NIST / CIS |
 | Contínuo | Revisar e melhorar os controles | ISO 27001 |
+
+---
 
 ## 🎯 Resultado esperado
 
@@ -285,5 +284,6 @@ Dessa forma, a EducaMais pode evoluir de uma postura reativa para uma abordagem 
 
 **Projeto acadêmico — Segurança da Informação**
 
-**Empresa:** EducaMais  
+**Empresa:** EducaMais
+
 **Status:** Análise inicial
