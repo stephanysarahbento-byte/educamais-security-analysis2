@@ -1,57 +1,50 @@
-# Diagrama de Segurança — EducaMais
+# Arquitetura de Segurança — EducaMais
 
-Este documento apresenta uma visão geral da estrutura de Segurança da Informação do projeto EducaMais e a integração dos principais frameworks utilizados na análise.
+Este documento apresenta uma visão geral da arquitetura de segurança proposta para a plataforma EducaMais.
 
-## Arquitetura da Segurança
+## Visão Geral da Arquitetura
 
 ```mermaid
 flowchart TB
 
-    A[EducaMais<br/>Plataforma de Educação Online]
+    %% Usuários
+    A[Aluno]
+    B[Professor]
+    C[Administrador]
 
-    A --> B[Plataforma Web]
+    %% Aplicação
+    A --> D[Plataforma EducaMais]
+    B --> D
+    C --> D
 
-    B --> C[Alunos]
-    B --> D[Administradores]
-    B --> E[Pagamentos]
-    B --> F[Materiais Didáticos]
+    %% Segurança de acesso
+    D --> E[Autenticação]
+    E --> F[Controle de Acesso]
 
-    A --> G[Programa de Segurança da Informação]
+    %% Proteções
+    F --> G[MFA]
+    F --> H[Princípio do Menor Privilégio]
 
-    G --> H[ISO/IEC 27001:2022]
-    G --> I[NIST CSF 2.0]
-    G --> J[CIS Controls]
-    G --> K[OWASP]
+    %% Dados
+    D --> I[Banco de Dados]
 
-    H --> H1[Governança]
-    H --> H2[Gestão de Riscos]
+    %% Segurança dos dados
+    I --> J[Proteção de Dados]
+    J --> K[Criptografia]
+    J --> L[Backup]
 
-    I --> I1[Govern]
-    I --> I2[Identify]
-    I --> I3[Protect]
-    I --> I4[Detect]
-    I --> I5[Respond]
-    I --> I6[Recover]
+    %% Monitoramento
+    D --> M[Logs e Monitoramento]
 
-    J --> J1[Gestão de Ativos]
-    J --> J2[Controle de Acesso]
-    J --> J3[Gestão de Vulnerabilidades]
+    M --> N[Detecção de Incidentes]
+    N --> O[Resposta a Incidentes]
 
-    K --> K1[Autenticação]
-    K --> K2[Controle de Acesso]
-    K --> K3[Desenvolvimento Seguro]
+    %% Gestão
+    P[Gestão de Segurança da Informação]
 
-    G --> L[Riscos Identificados]
+    P --> Q[ISO 27001]
+    P --> R[NIST CSF 2.0]
+    P --> S[CIS Controls]
+    P --> T[OWASP]
 
-    L --> L1[Acessos não autorizados]
-    L --> L2[Falhas de autenticação]
-    L --> L3[Privilégios excessivos]
-    L --> L4[Ausência de monitoramento]
-
-    G --> M[Controles de Segurança]
-
-    M --> M1[MFA]
-    M --> M2[Menor Privilégio]
-    M --> M3[Logs e Monitoramento]
-    M --> M4[Gestão de Vulnerabilidades]
-    M --> M5[Resposta a Incidentes]
+    P --> D
