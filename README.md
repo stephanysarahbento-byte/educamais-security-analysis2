@@ -76,7 +76,7 @@ A EducaMais não possui um processo formal de gestão de riscos. Portanto, a ISO
 
 ## 2. NIST Cybersecurity Framework 2.0
 
-O NIST CSF 2.0 organiza a segurança cibernética em seis funções:
+O NIST CSF organiza a segurança cibernética em seis funções:
 
 ```text
 Govern
@@ -90,22 +90,26 @@ Detect
 Respond
    ↓
 Recover
+```
 
-Aplicação na EducaMais
-Govern: estabelecer políticas, responsabilidades e critérios de risco.
+### Aplicação na EducaMais
 
-Identify: identificar ativos, sistemas, dados e riscos.
+**Govern:** estabelecer políticas, responsabilidades e critérios de risco.
 
-Protect: implementar MFA, controle de acesso, proteção de dados e autenticação adequada.
+**Identify:** identificar ativos, sistemas, dados e riscos.
 
-Detect: monitorar logs e identificar atividades suspeitas.
+**Protect:** implementar MFA, controle de acesso, proteção de dados e autenticação adequada.
 
-Respond: estabelecer procedimentos para tratar incidentes.
+**Detect:** monitorar logs e identificar atividades suspeitas.
 
-Recover: implementar backups e procedimentos de recuperação.
+**Respond:** estabelecer procedimentos para tratar incidentes.
 
-Justificativa
+**Recover:** implementar backups e procedimentos de recuperação.
+
+### Justificativa
+
 O NIST CSF permite organizar a segurança como um ciclo contínuo, desde a identificação dos riscos até a recuperação após um incidente.
+
 
 3. CIS Controls
 Os CIS Controls apresentam práticas de segurança que podem ser utilizadas de forma prática e priorizada.
@@ -223,20 +227,21 @@ Conscientização sobre phishing;
 Boas práticas de senhas;
 Uso correto de MFA;
 Proteção de dados;
-Comunicação de incidentes.
-📊 Plano de ação
-Prazo	Ação	Referencial
-Imediato	Corrigir login e recuperação de senha	OWASP
-Imediato	Revisar privilégios administrativos	CIS / OWASP
-Imediato	Proteger contas administrativas com MFA	NIST / CIS
-Imediato	Investigar acessos não autorizados	NIST
-Curto prazo	Implantar logs e monitoramento	NIST / CIS
-Curto prazo	Criar resposta a incidentes	NIST / ISO 27001
-Curto prazo	Inventariar ativos	CIS / ISO 27001
-Médio prazo	Estruturar gestão de riscos	ISO 27001
-Médio prazo	Implementar desenvolvimento seguro	OWASP
-Contínuo	Treinar colaboradores	ISO / NIST / CIS
-Contínuo	Revisar e melhorar os controles	ISO 27001
+## 📊 Plano de ação
+
+| Prazo | Ação | Referencial |
+|---|---|---|
+| Imediato | Corrigir login e recuperação de senha | OWASP |
+| Imediato | Revisar privilégios administrativos | CIS / OWASP |
+| Imediato | Proteger contas administrativas com MFA | NIST / CIS |
+| Imediato | Investigar acessos não autorizados | NIST |
+| Curto prazo | Implantar logs e monitoramento | NIST / CIS |
+| Curto prazo | Criar resposta a incidentes | NIST / ISO 27001 |
+| Curto prazo | Inventariar ativos | CIS / ISO 27001 |
+| Médio prazo | Estruturar gestão de riscos | ISO 27001 |
+| Médio prazo | Implementar desenvolvimento seguro | OWASP |
+| Contínuo | Treinar colaboradores | ISO / NIST / CIS |
+| Contínuo | Revisar e melhorar os controles | ISO 27001 |
 
 🎯 Resultado esperado
 Com a implementação das medidas propostas, espera-se:
